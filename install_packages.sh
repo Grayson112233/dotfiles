@@ -25,3 +25,6 @@ git config --global user.name $GIT_USERNAME
 
 # Set git to use simple pushing and squelch warning on pushes
 git config --global push.default simple
+
+# Copy Sublime Text preferences
+cp resources/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
