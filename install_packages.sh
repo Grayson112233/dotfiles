@@ -22,3 +22,6 @@ apt-get upgrade -y
 # Set up git global config with username and email
 git config --global user.email $EMAIL
 git config --global user.name $GIT_USERNAME
+
+# Set git to use simple pushing and squelch warning on pushes
+git config --global push.default simple
