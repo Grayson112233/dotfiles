@@ -4,13 +4,15 @@ source options.sh
 # Ensure no interactive post-install prompts appear
 export DEBIAN_FRONTEND=noninteractive
 
-# Add apt source for Sublime Text 3 from stable channel
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+if [ $SERVER_MODE = false ] ; then
+	# Add apt source for Sublime Text 3 from stable channel
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
-# Add apt source for Google Chrome from stable channel
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+	# Add apt source for Google Chrome from stable channel
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+	sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+fi
 
 # Update Packages
 apt-get update
@@ -26,5 +28,8 @@ git config --global user.name $GIT_USERNAME
 # Set git to use simple pushing and squelch warning on pushes
 git config --global push.default simple
 
-# Copy Sublime Text preferences
-cp resources/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+if [ $SERVER_MODE ] ; then
+	# Copy Sublime Text preferences
+	cp resources/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+fi
+
