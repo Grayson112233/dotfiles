@@ -1,0 +1,10 @@
+stage {
+    font-family: Garuda, sans-serif;
+    font-size: 12pt;
+    color: white;
+    
+}
+
+* {
+	font-weight: normal !important;
+}

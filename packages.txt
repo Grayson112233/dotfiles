@@ -11,3 +11,6 @@ gimp
 network-manager-openvpn-gnome
 zenmap
 filezilla
+numix-gtk-theme
+numix-icon-theme-circle
+gnome-tweak-tool

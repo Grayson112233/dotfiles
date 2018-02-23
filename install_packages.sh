@@ -15,6 +15,11 @@ if [ $SERVER_MODE = false ] ; then
 
 	# Download latest GitKraken deb installer
 	wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+
+	# Install GitKraken from deb package
+	sudo dpkg -i gitkraken-amd64.deb
+
+	sudo add-apt-repository ppa:numix/ppa
 fi
 
 # Update Packages
@@ -22,8 +27,7 @@ sudo apt-get update
 
 # Install listed packages from 'packages.txt'
 sudo apt-get install $(grep -vE "^\s*#" packages.txt  | tr "\n" " ") -y
-# Install GitKraken from deb package
-sudo dpkg -i gitkraken-amd64.deb
+
 # Finally, upgrade all other packages
 sudo apt-get upgrade -y
 
