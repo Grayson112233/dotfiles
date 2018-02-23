@@ -2,3 +2,12 @@ git
 vim
 google-chrome-stable
 sublime-text
+python
+python-pip
+python3
+python3-venv
+python3-pip
+gimp
+network-manager-openvpn-gnome
+zenmap
+filezilla

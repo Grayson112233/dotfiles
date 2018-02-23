@@ -12,14 +12,20 @@ if [ $SERVER_MODE = false ] ; then
 	# Add apt source for Google Chrome from stable channel
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 	sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
+	# Download latest GitKraken deb installer
+	wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 fi
 
 # Update Packages
-apt-get update
+sudo apt-get update
 
 # Install listed packages from 'packages.txt'
-apt-get install $(grep -vE "^\s*#" packages.txt  | tr "\n" " ") -y
-apt-get upgrade -y
+sudo apt-get install $(grep -vE "^\s*#" packages.txt  | tr "\n" " ") -y
+# Install GitKraken from deb package
+sudo dpkg -i gitkraken-amd64.deb
+# Finally, upgrade all other packages
+sudo apt-get upgrade -y
 
 # Set up git global config with username and email
 git config --global user.email $EMAIL
