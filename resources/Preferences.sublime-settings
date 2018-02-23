@@ -4,5 +4,7 @@
 	[
 		"Vintage"
 	],
-	"theme": "Broceanic.sublime-theme"
+	"theme": "Broceanic.sublime-theme",
+	"font_face": "SF Mono",
+	"font_size": 10
 }
