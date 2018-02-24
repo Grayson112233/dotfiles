@@ -1,0 +1,5 @@
+1. Copy css file to /usr/share/themes/Numix/gnome-shell/ (may need to create dir)
+
+2. In Gnome Tweak Tool, enable Extension: User Shell Themes
+
+3. Also in tweak tool, select shell theme under Appearance
