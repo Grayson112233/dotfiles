@@ -1,0 +1,2 @@
+alias venv="source env/bin/activate"
+
