@@ -1,4 +1,4 @@
 # Set the sensitivity and speed for the Thinkpad Trackpoint
-sudo bash -c 'echo -n 150 > /sys/devices/platform/i8042/serio1/serio2/speed'
+sudo bash -c 'echo -n 200 > /sys/devices/platform/i8042/serio1/serio2/speed'
 sudo bash -c 'echo -n 200 > /sys/devices/platform/i8042/serio1/serio2/sensitivity'
 
